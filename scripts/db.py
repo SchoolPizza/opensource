@@ -9,7 +9,7 @@ from sklearn.metrics.pairwise import linear_kernel
 
 def run():
 
-		with open('C:\\Users\\MuNir\\book\\brs\\book.csv') as csvfile:
+		with open('./book.csv') as csvfile:
 			reader = csv.DictReader(csvfile)
 			for row in reader:
 				b = Book_list()
@@ -20,7 +20,7 @@ def run():
 				b.save()
 				
 
-		books = pd.read_csv('C:\\Users\\MuNir\\book\\brs\\book.csv', sep=',', error_bad_lines=False, encoding ='latin-1')
+		books = pd.read_csv('./book.csv', sep=',', error_bad_lines=False, encoding ='latin-1')
 		books.columns = ['ID', 'Name', 'Author', 'Genre']
 
 		tf = TfidfVectorizer(analyzer='word', ngram_range=(1,2), min_df=0, stop_words='english')
